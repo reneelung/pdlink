@@ -21,5 +21,5 @@ config :pdlink, Pdlink.Repo,
        adapter: Ecto.Adapters.MySQL,
        pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
        ssl: true,
-       url: System.get_env("CLEARDB_DATABASE_URL")
+       url: System.get_env("DATABASE_URL")
 import_config "prod.secret.exs"
