@@ -1,7 +1,6 @@
 defmodule PdlinkWeb.LinkController do
   use PdlinkWeb, :controller
 
-  alias Pdlink.Ecto.HashId
   alias Pdlink.Links
   alias Pdlink.Links.Link
 
@@ -42,8 +41,8 @@ defmodule PdlinkWeb.LinkController do
     end
   end
 
-  def get_and_redirect(conn, %{"id" => id}) do
-    url = id
+  def get_and_redirect(conn, %{"hash" => hash}) do
+    url = hash
           |> Links.get_link!()
           |> Map.get(:url)
     redirect(conn, external: url)

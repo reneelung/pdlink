@@ -5,7 +5,6 @@ defmodule Pdlink.Links do
 
   import Ecto.Query, warn: false
   alias Pdlink.Repo
-  alias Pdlink.Ecto.HashId
 
   alias Pdlink.Links.Link
 
@@ -36,7 +35,9 @@ defmodule Pdlink.Links do
       ** (Ecto.NoResultsError)
 
   """
-  def get_link!(id), do: Repo.get!(Link, id)
+  def get_link!(hash) do
+    Repo.get_by(Link, hash: hash)
+  end
 
   @doc """
   Creates a link.

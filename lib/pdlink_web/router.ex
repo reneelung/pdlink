@@ -19,7 +19,7 @@ defmodule PdlinkWeb.Router do
   end
 
   scope "/", PdlinkWeb do
-    get "/:id", LinkController, :get_and_redirect
+    get "/:hash", LinkController, :get_and_redirect
   end
 
   scope "/", PdlinkWeb do
