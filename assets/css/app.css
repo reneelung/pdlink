@@ -1,3 +1,12 @@
-/* This file is for your main application css. */
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
 
-@import "./phoenix.css";
+#target-link {
+    width: 70%;
+    margin-right: 20px;
+}

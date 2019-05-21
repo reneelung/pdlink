@@ -22,9 +22,14 @@ config :logger, level: :info
 
 # Configure your database
 config :pdlink, Pdlink.Repo,
-       adapter: Ecto.Adapters.Postgres,
+       adapter: Ecto.Adapters.MySQL,
        pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
        ssl: true,
-       url: System.get_env("DATABASE_URL")
-       
+       url: System.get_env("CLEARDB_DATABASE_URL"),
+
+       database: "heroku_fc2ac83b005625b",
+       username: "b84ad61bf377e3",
+       password: "271a7e7b",
+       host: "localhost"
+
 import_config "prod.secret.exs"

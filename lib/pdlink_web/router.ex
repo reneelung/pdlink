@@ -13,6 +13,15 @@ defmodule PdlinkWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", PdlinkWeb do
+    pipe_through :api
+    resources "/links", LinkController, except: [:edit]
+  end
+
+  scope "/", PdlinkWeb do
+    get "/:id", LinkController, :get_and_redirect
+  end
+
   scope "/", PdlinkWeb do
     pipe_through :browser
 

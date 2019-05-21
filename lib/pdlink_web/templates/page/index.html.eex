@@ -1,35 +1,13 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
-</section>
-
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.4/CHANGELOG.md">v1.4 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-    </ul>
-  </article>
-</section>
+<div class="text-center">
+  <section class="jumbotron text-center">
+    <h1 class="jumbotron-heading mb-5">PagerDuty Link Shortener</h1>
+    <p class="lead text-muted">
+      Because it feels weird to use bit.ly for internal things.
+    </p>
+  </section>
+      <form class="form-signin">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="text" id="inputLink" class="form-control" placeholder="Link to shrink" required autofocus>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Make it tiny!</button>
+          </form>
+</div>
