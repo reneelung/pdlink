@@ -15,3 +15,11 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+import "react-phoenix"
+
+import LinkForm from "./components/linkform"
+
+window.Components = {
+  LinkForm
+}

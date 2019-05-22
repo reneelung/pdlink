@@ -43,9 +43,8 @@ defmodule Pdlink.Ecto.HashId do
   @doc "Generates a HashId"
   @spec generate() :: String.t
   def generate do
-    @hash_id_length
-    |> :crypto.strong_rand_bytes()
-    |> Base.url_encode64
-    |> binary_part(0, @hash_id_length)
+    context = Hashids.new(salt: Application.get_env(:pdlink, :hashids_salt))
+    timestamp = DateTime.utc_now |> DateTime.to_unix
+    Hashids.encode(context, timestamp)
   end
 end

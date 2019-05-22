@@ -5,9 +5,5 @@
       Because it feels weird to use bit.ly for internal things.
     </p>
   </section>
-      <form class="form-signin">
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="text" id="inputLink" class="form-control" placeholder="Link to shrink" required autofocus>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Make it tiny!</button>
-          </form>
+      <%= ReactPhoenix.ClientSide.react_component("Components.LinkForm") %>
 </div>

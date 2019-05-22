@@ -8,7 +8,8 @@
 use Mix.Config
 
 config :pdlink,
-  ecto_repos: [Pdlink.Repo]
+  ecto_repos: [Pdlink.Repo],
+  hashids_salt: "SECRET_SALT"
 
 # Configures the endpoint
 config :pdlink, PdlinkWeb.Endpoint,

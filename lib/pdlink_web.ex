@@ -24,6 +24,8 @@ defmodule PdlinkWeb do
       import Plug.Conn
       import PdlinkWeb.Gettext
       alias PdlinkWeb.Router.Helpers, as: Routes
+
+      import ReactPhoenix.ClientSide
     end
   end
 

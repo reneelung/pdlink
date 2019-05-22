@@ -42,7 +42,9 @@ defmodule Pdlink.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:mariaex, "~> 0.9.1"} ,
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:react_phoenix, "~> 1.0.0"},
+      {:hashids, "~> 2.0"}
     ]
   end
 
