@@ -44,7 +44,8 @@ defmodule Pdlink.MixProject do
       {:mariaex, "~> 0.9.1"} ,
       {:plug_cowboy, "~> 2.0"},
       {:react_phoenix, "~> 1.0.0"},
-      {:hashids, "~> 2.0"}
+      {:hashids, "~> 2.0"},
+      {:nanoid, "~> 2.0.1"}
     ]
   end
 

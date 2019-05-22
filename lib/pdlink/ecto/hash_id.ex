@@ -1,6 +1,5 @@
 defmodule Pdlink.Ecto.HashId do
   @behaviour Ecto.Type
-  @hash_id_length 8
   # ======================= #
   # Ecto Specific Callbacks #
   # ======================= #
@@ -43,8 +42,6 @@ defmodule Pdlink.Ecto.HashId do
   @doc "Generates a HashId"
   @spec generate() :: String.t
   def generate do
-    context = Hashids.new(salt: Application.get_env(:pdlink, :hashids_salt))
-    timestamp = DateTime.utc_now |> DateTime.to_unix
-    Hashids.encode(context, timestamp)
+    Nanoid.generate()
   end
 end

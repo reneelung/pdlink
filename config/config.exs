@@ -18,6 +18,10 @@ config :pdlink, PdlinkWeb.Endpoint,
   render_errors: [view: PdlinkWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Pdlink.PubSub, adapter: Phoenix.PubSub.PG2]
 
+config :nanoid,
+  size: 8,
+  alphabet: "_0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

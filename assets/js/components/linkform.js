@@ -7,10 +7,24 @@ class LinkForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCopy = this.handleCopy.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
         editHash: "",
-        isLoaded: false
+        isLoaded: false,
+        inputLink: ""
     };
+  }
+
+  handleChange(e) {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name] : value
+    });
+
   }
 
   handleCopy(e) {
@@ -18,6 +32,10 @@ class LinkForm extends React.Component {
     var copyText = document.querySelector("#inputLink");
     copyText.select();
     document.execCommand("copy");
+  }
+
+  handleClick(e) {
+    e.preventDefault();
   }
 
   handleSubmit(e) {
@@ -54,19 +72,21 @@ class LinkForm extends React.Component {
   }
 
   render() {
+    var hasHash = this.state.editHash && this.state.isLoaded
     var shortLinkGroupClass = classNames({
-          'hidden': !this.state.editHash
+          'form-inline': true,
+          'hidden': !hasHash
         });
     var formClass = classNames({
         'form-inline': true,
-        'hidden': this.state.editHash && this.state.isLoaded
+        'hidden': hasHash
     });
-    var shortLink = "http://pdlink.herokuapp.com/" + this.state.editHash
+    var shortLink = `${window.location.origin}/${this.state.editHash}`
     return (
     <div>
       <form onSubmit={this.handleSubmit} className={formClass}>
-        <input type="text" id="inputLink" name="inputLink" className="form-control" value={this.state.url} placeholder="Link to shrink"/>
-        <button className="btn btn-primary" type="submit">Make it tiny!</button>
+        <input onChange={this.handleChange} type="text" id="inputLink" name="inputLink" className="form-control" value={this.state.inputLink} placeholder="Link to shrink"/>
+        <button disabled={!this.state.inputLink} className="btn btn-primary" type="submit">Make it tiny!</button>
       </form>
       <div className={shortLinkGroupClass}>
         <input readOnly id="shortLink" className="form-control" value={shortLink} />
